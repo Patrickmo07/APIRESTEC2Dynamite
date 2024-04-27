@@ -19,6 +19,7 @@ import pe.edu.cibertec.APIRESTEC2Dynamite.service.IProgramaTVService;
 @RequestMapping(path = "api/v1/personaje")
 public class PersonajeController {
     private IPersonajeService iPersonajeService;
+
     @PostMapping("")
     public ResponseEntity<Personaje> registrarPersonaje(
             @RequestBody PersonajeRequestDto personajeRequestDto

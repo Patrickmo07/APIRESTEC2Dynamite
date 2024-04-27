@@ -21,12 +21,14 @@ public class PersonajeService implements IPersonajeService {
         Personaje personaje = new Personaje();
         personaje.setNomPersonaje (personajeRequestDto.getNomPersonaje());
         personaje.setApePersonaje(personajeRequestDto.getApePersonaje());
+        personaje.setFechNacPersonaje(personajeRequestDto.getFechNacPersonaje());
         Personaje nuevoPersonaje = personajeRepository.save(personaje);
         ProgramaTV programaTV;
         for (ProgramaTVRequestDto programaTVRequestDto : personajeRequestDto.getProgramas()){
             programaTV = new ProgramaTV();
             programaTV.setTitulo(programaTVRequestDto.getTitulo());
             programaTV.setResumen(programaTVRequestDto.getResumen());
+            programaTV.setFechaInicio(programaTVRequestDto.getFechaInicio());
             programaTV.setPersonaje(nuevoPersonaje);
             iProgramaTVService.registrarProgramaTV(programaTV);
         };
